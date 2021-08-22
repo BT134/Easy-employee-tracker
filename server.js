@@ -4,7 +4,11 @@ const mysql = require('mysql2')
 const inquirer = require('inquirer'); 
 // import console.table
 const cTable = require('console.table'); 
-
+// import chalk 
+const chalk = require('chalk');
+// import figlet
+const figlet = require('figlet');
+// require dotenv to conceal password
 require('dotenv').config()
 
 // connection to database
@@ -23,11 +27,11 @@ connection.connect(err => {
 
 // function after connection is established and welcome image shows 
 afterConnection = () => {
-  console.log("***********************************")
-  console.log("*                                 *")
-  console.log("*        EMPLOYEE MANAGER         *")
-  console.log("*                                 *")
-  console.log("***********************************")
+  console.log("**************************************************************************************************")
+  console.log(" ")
+  console.log(chalk.blueBright.bold(figlet.textSync("EMPLOYEE MANAGER")));
+  console.log(" ")
+  console.log("**************************************************************************************************")
   promptUser();
 };
 
@@ -210,7 +214,7 @@ inquirer.prompt([
     name: 'salary',
     message: "What is the salary of this role?",
     validate: addSalary => {
-      if (isNAN(addSalary)) {
+      if (addSalary) {
           return true;
       } else {
           console.log('Please enter a salary');
@@ -247,7 +251,7 @@ inquirer.prompt([
 
           connection.query(sql, params, (err, res) => {
             if (err) throw err;
-            console.log('Added' + answer.role + " to roles!"); 
+            console.log('Added ' + answer.role + " to roles!"); 
 
             showRoles();
      });
@@ -315,8 +319,6 @@ inquirer.prompt([
               if (err) throw err;
 
               const managers = data.map(({ id, first_name, last_name }) => ({ name: first_name + " "+ last_name, value: id }));
-
-              // console.log(managers);
 
               inquirer.prompt([
                 {
@@ -409,7 +411,7 @@ const employees = data.map(({ id, first_name, last_name }) => ({ name: first_nam
 });
 };
 
-// function to update an employee 
+// function to update an employee manager
 updateManager = () => {
 // get employees from employee table 
 const employeeSql = `SELECT * FROM employee`;
