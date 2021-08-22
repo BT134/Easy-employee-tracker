@@ -31,7 +31,7 @@ SO THAT I can organize and plan my business
 
 ## Visual Demo
 
-><img src="\assets\Employee-Tracker.gif" alt= "gif of employee tracker app in operation">
+><img src=".\assets\Employee-Tracker.gif" alt= "gif of employee tracker app in operation">
 
 > Full video/demo can be viewed [HERE](https://drive.google.com/file/d/14uDQM9uzX9zxIytc3O4xLDgmvswkV5NJ/view)
 
