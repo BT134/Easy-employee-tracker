@@ -53,7 +53,8 @@ const promptUser = () => {
                 "View employees by department",
                 'Delete a department',
                 'Delete a role',
-                'Delete an employee', 
+                'Delete an employee',
+                'View department budgets', 
                 'Exit App'
                 ]
     }
@@ -107,6 +108,10 @@ const promptUser = () => {
 
     if (choices === "Delete an employee") {
       deleteEmployee();
+    }
+
+    if (choices === "View department budgets") {
+      viewBudget();
     }
 
     if (choices === "Exit App") {
@@ -585,4 +590,20 @@ const employees = data.map(({ id, first_name, last_name }) => ({ name: first_nam
 });
 });
 };
+// view department budget 
+viewBudget = () => {
+  console.log('Showing budget by departments...\n');
 
+  const sql = `SELECT department_id AS ID, 
+                      department.name AS Department,
+                      SUM(salary) AS Budget
+               FROM  role  
+               JOIN department ON role.department_id = department.id GROUP BY department_id`;
+  
+  connection.query(sql, (err, res) => {
+    if (err) throw err; 
+    console.table(res);
+
+    promptUser(); 
+  });            
+};
