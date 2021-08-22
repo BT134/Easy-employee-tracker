@@ -8,7 +8,9 @@
   - [Description](#description)
   - [User Story](#user-story)
   - [Installation](#installation)
-  - [Visual Demo](#visual-presentation)
+  - [Visual Demo](#visual-demo)
+  - [Screenshot](#screen-shot)
+  - [Tests](#tests)
   - [Built With](#built-with)
   - [Acknowledgements](#acknowledgements)
   - [Author](#author)
@@ -23,15 +25,23 @@ SO THAT I can organize and plan my business
 
 ## Installation/Usage
 
-> The user should clone the repository from GitHub. This application requires Node.js, Inquirer and Mysql2. To start application run `npm start`. To view database from MySQL run `mysql -u root -p`.
+> The user should clone the repository from GitHub. This application requires Node.js, Inquirer and Mysql2. To start application run `npm install` then once depencies have install run `npm start`. To view database from MySQL run `mysql -u root -p`.
 
 > This application will allow users to view, add, and edit employees, roles, departments, and managers.
 
 ## Visual Demo
 
+><img src="\assets\Employee-Tracker.gif" alt= "gif of employee tracker app in operation">
+
+> Full video/demo can be viewed [HERE](https://drive.google.com/file/d/14uDQM9uzX9zxIytc3O4xLDgmvswkV5NJ/view)
 
 ## Screen Shot
 
+><img src=".\assets\screenshot.JPG" alt="Screen shot photo of app starting screen">
+
+## Tests
+
+> No tests were run on this app.
 
 ## Built With
 
